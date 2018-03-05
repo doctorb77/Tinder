@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Cards View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="CardsViewController" customModule="Tinder" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="action_buttons" translatesAutoresizingMaskIntoConstraints="NO" id="G3q-qg-kV9">
+                                <rect key="frame" x="0.0" y="517" width="375" height="108"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gustavo" translatesAutoresizingMaskIntoConstraints="NO" id="XiB-AB-XSK">
+                                <rect key="frame" x="18" y="122" width="338" height="338"/>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="338" id="CgM-ij-OJx"/>
+                                    <constraint firstAttribute="width" constant="338" id="csL-z3-T13"/>
+                                </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="6PU-Ku-it8" appends="YES" id="GzA-X5-nwx"/>
+                                    <outletCollection property="gestureRecognizers" destination="EJp-nW-neb" appends="YES" id="qhS-0N-LuF"/>
+                                </connections>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="nav_bar" translatesAutoresizingMaskIntoConstraints="NO" id="rhf-FX-AIT">
+                                <rect key="frame" x="0.0" y="20" width="375" height="64"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="rhf-FX-AIT" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="4f1-O8-UDe"/>
+                            <constraint firstItem="XiB-AB-XSK" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="102" id="5Nz-iR-hQa"/>
+                            <constraint firstItem="rhf-FX-AIT" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="6Cs-AE-Xgb"/>
+                            <constraint firstItem="G3q-qg-kV9" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Ae9-gz-WnK"/>
+                            <constraint firstItem="G3q-qg-kV9" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="NFI-Hx-DgQ"/>
+                            <constraint firstItem="XiB-AB-XSK" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="UKJ-Kg-OO7"/>
+                            <constraint firstItem="G3q-qg-kV9" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="WD7-w8-7XA"/>
+                            <constraint firstItem="rhf-FX-AIT" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="foh-4b-pSo"/>
+                            <constraint firstItem="G3q-qg-kV9" firstAttribute="top" secondItem="XiB-AB-XSK" secondAttribute="bottom" constant="57" id="htt-eR-sze"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="G3q-qg-kV9" secondAttribute="bottom" constant="38" id="lqx-lf-i9c"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="profileImage" destination="XiB-AB-XSK" id="MfJ-hr-dGv"/>
+                        <segue destination="scB-db-lFy" kind="presentation" identifier="detailSegue" id="QMe-1i-eDa"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="6PU-Ku-it8">
+                    <connections>
+                        <action selector="didPan:" destination="BYZ-38-t0r" id="nSR-bH-w8J"/>
+                    </connections>
+                </panGestureRecognizer>
+                <tapGestureRecognizer id="EJp-nW-neb">
+                    <connections>
+                        <action selector="didTapImage:" destination="BYZ-38-t0r" id="aO6-mr-bti"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="32.799999999999997" y="31.03448275862069"/>
+        </scene>
+        <!--Detail View Controller-->
+        <scene sceneID="3Vd-Mq-pUl">
+            <objects>
+                <viewController id="scB-db-lFy" customClass="DetailViewController" customModule="Tinder" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="T9h-eq-lNB">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gustavo" translatesAutoresizingMaskIntoConstraints="NO" id="psF-Hm-Z85">
+                                <rect key="frame" x="0.0" y="93" width="375" height="375"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="375" id="yk8-Br-oMm"/>
+                                </constraints>
+                            </imageView>
+                            <imageView contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="nav_bar2" translatesAutoresizingMaskIntoConstraints="NO" id="3uY-G5-t0A">
+                                <rect key="frame" x="0.0" y="20" width="375" height="65"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="8DZ-tm-tYP" appends="YES" id="LBc-AA-QPt"/>
+                                </connections>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gustavo Rodriguez-Rivera" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="neJ-mE-Stk">
+                                <rect key="frame" x="16" y="476" width="351" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="T1m-2h-Kvv"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This gentleman knows how to perfectly draw a heap and explain malloc using the one and only Microsoft paint." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6dK-Gs-8mU">
+                                <rect key="frame" x="16" y="514" width="351" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="neJ-mE-Stk" firstAttribute="leading" secondItem="leO-4u-SCD" secondAttribute="leading" constant="16" id="2q2-Xp-8Jc"/>
+                            <constraint firstItem="leO-4u-SCD" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="6dK-Gs-8mU" secondAttribute="bottom" constant="8" id="4aJ-VF-bvO"/>
+                            <constraint firstItem="3uY-G5-t0A" firstAttribute="trailing" secondItem="leO-4u-SCD" secondAttribute="trailing" id="6xy-9X-r9l"/>
+                            <constraint firstItem="6dK-Gs-8mU" firstAttribute="top" secondItem="neJ-mE-Stk" secondAttribute="bottom" constant="8" id="AQ9-Rc-bRE"/>
+                            <constraint firstItem="6dK-Gs-8mU" firstAttribute="leading" secondItem="neJ-mE-Stk" secondAttribute="leading" id="Np0-wF-80U"/>
+                            <constraint firstItem="3uY-G5-t0A" firstAttribute="top" secondItem="leO-4u-SCD" secondAttribute="top" id="Pmk-60-CEb"/>
+                            <constraint firstItem="3uY-G5-t0A" firstAttribute="leading" secondItem="leO-4u-SCD" secondAttribute="leading" id="Rbh-ov-UGa"/>
+                            <constraint firstItem="6dK-Gs-8mU" firstAttribute="trailing" secondItem="neJ-mE-Stk" secondAttribute="trailing" id="cHb-ng-F9s"/>
+                            <constraint firstItem="leO-4u-SCD" firstAttribute="trailing" secondItem="neJ-mE-Stk" secondAttribute="trailing" constant="8" id="eTw-Pl-pv1"/>
+                            <constraint firstItem="psF-Hm-Z85" firstAttribute="leading" secondItem="leO-4u-SCD" secondAttribute="leading" id="fb9-4p-dDU"/>
+                            <constraint firstItem="neJ-mE-Stk" firstAttribute="top" secondItem="psF-Hm-Z85" secondAttribute="bottom" constant="8" id="l3T-eQ-zem"/>
+                            <constraint firstItem="psF-Hm-Z85" firstAttribute="trailing" secondItem="leO-4u-SCD" secondAttribute="trailing" id="oB8-Rd-s5E"/>
+                            <constraint firstItem="psF-Hm-Z85" firstAttribute="top" secondItem="3uY-G5-t0A" secondAttribute="bottom" constant="8" id="sBq-P0-fI5"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="leO-4u-SCD"/>
+                    </view>
+                    <connections>
+                        <outlet property="profileImage" destination="psF-Hm-Z85" id="cDd-hG-yGS"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FhL-7W-Lo9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="8DZ-tm-tYP">
+                    <connections>
+                        <action selector="didTapDone:" destination="scB-db-lFy" id="IJM-dr-F7f"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="893.60000000000002" y="31.773399014778327"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="action_buttons" width="320" height="108"/>
+        <image name="gustavo" width="338" height="394"/>
+        <image name="nav_bar" width="320" height="65"/>
+        <image name="nav_bar2" width="320" height="65"/>
+    </resources>
+</document>
